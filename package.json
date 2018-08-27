@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FACN4/Race-Home-.git"
+    "url": "git+https://github.com/FACN4/week9-Race-Home.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FACN4/Race-Home-/issues"
+    "url": "https://github.com/FACN4/week9-Race-Home/issues"
   },
-  "homepage": "https://github.com/FACN4/Race-Home-#readme",
+  "homepage": "https://github.com/FACN4/week9-Race-Home#readme",
   "dependencies": {
     "dom-react": "^2.2.1",
     "react": "^16.4.2"
