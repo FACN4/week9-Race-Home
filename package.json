@@ -1,0 +1,38 @@
+{
+  "name": "race-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test.js --watch --noStackTrace",
+    "dev": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN4/week9-Race-Home.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN4/week9-Race-Home/issues"
+  },
+  "homepage": "https://github.com/FACN4/week9-Race-Home#readme",
+  "dependencies": {
+    "dom-react": "^2.2.1",
+    "react": "^16.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.4.0",
+    "eslint-config-recommended": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.5.0",
+    "parcel-bundler": "^1.9.7",
+    "react-testing-library": "^5.0.0"
+  }
+}
