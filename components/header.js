@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Header = () => (
-  <div>
+  <div id="header">
     <h1>Race Home</h1>
     <h2> How to play:</h2>
     <ul>
