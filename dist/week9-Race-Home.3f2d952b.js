@@ -19765,7 +19765,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = exports.Header = function Header() {
   return _react2.default.createElement(
     "div",
-    null,
+    { id: "header" },
     _react2.default.createElement(
       "h1",
       null,
@@ -19812,17 +19812,210 @@ var Header = exports.Header = function Header() {
     )
   );
 };
-},{"react":"node_modules/react/index.js"}],"components/main.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/race.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Race = undefined;
 
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"react":"node_modules/react/index.js"}],"components/footer.js":[function(require,module,exports) {
 
-},{}],"index.js":[function(require,module,exports) {
+var Race = exports.Race = function Race() {
+  return _react2.default.createElement(
+    "div",
+    { id: "race" },
+    _react2.default.createElement("img", { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGO-tlt91CAxyJc2EGZpIc0Rz6LmdOh56ILcW4aZeuB9OlgFICWQ" })
+  );
+};
+},{"react":"node_modules/react/index.js"}],"components/clock.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Clock = undefined;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Clock = exports.Clock = function Clock() {
+  return _react2.default.createElement(
+    "div",
+    { id: "clock" },
+    _react2.default.createElement(
+      "button",
+      null,
+      " I am a clock "
+    )
+  );
+};
+},{"react":"node_modules/react/index.js"}],"components/input.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Input = undefined;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Input = exports.Input = function Input() {
+  return _react2.default.createElement(
+    "div",
+    { id: "input" },
+    _react2.default.createElement(
+      "form",
+      null,
+      _react2.default.createElement("input", { type: "text", value: "username" })
+    )
+  );
+};
+},{"react":"node_modules/react/index.js"}],"components/main.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Main = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _race = require("./race");
+
+var _clock = require("./clock");
+
+var _input = require("./input");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Main = exports.Main = function (_React$Component) {
+  _inherits(Main, _React$Component);
+
+  function Main() {
+    _classCallCheck(this, Main);
+
+    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+  }
+
+  _createClass(Main, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { id: "main" },
+        _react2.default.createElement(_clock.Clock, null),
+        _react2.default.createElement(_input.Input, null),
+        _react2.default.createElement(_race.Race, null),
+        _react2.default.createElement(_race.Race, null),
+        _react2.default.createElement(_input.Input, null)
+      );
+    }
+  }]);
+
+  return Main;
+}(_react2.default.Component);
+},{"react":"node_modules/react/index.js","./race":"components/race.js","./clock":"components/clock.js","./input":"components/input.js"}],"components/footer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Footer = undefined;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = exports.Footer = function Footer() {
+  return _react2.default.createElement(
+    "div",
+    { id: "footer" },
+    _react2.default.createElement(
+      "p",
+      null,
+      " am Footer!!"
+    )
+  );
+};
+},{"react":"node_modules/react/index.js"}],"components/app.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _header = require("./header");
+
+var _main = require("./main");
+
+var _footer = require("./footer");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_header.Header, null),
+        _react2.default.createElement(_main.Main, null),
+        _react2.default.createElement(_footer.Footer, null)
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.Component);
+
+exports.default = App;
+},{"react":"node_modules/react/index.js","./header":"components/header.js","./main":"components/main.js","./footer":"components/footer.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = require("react");
@@ -19831,23 +20024,14 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require("react-dom");
 
-var _header = require("./components/header");
+var _app = require("./components/app");
 
-var _main = require("./components/main");
-
-var _footer = require("./components/footer");
+var _app2 = _interopRequireDefault(_app);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App() {
-  return _react2.default.createElement(_header.Header, null)
-  // <Main/>
-  // <Footer/>
-  ;
-};
-
-(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/header":"components/header.js","./components/main":"components/main.js","./components/footer":"components/footer.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _reactDom.render)(_react2.default.createElement(_app2.default, null), document.getElementById("root"));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/app":"components/app.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -19876,7 +20060,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50207' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50725' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
