@@ -23,7 +23,8 @@ export class Race extends React.Component {
     console.log(position);
     return (
       <div
-        id="race"  onLoad={this.bounce}>
+        id="race"
+        onLoad={this.bounce}
         style={{
           position: "absolute"
         }}
