@@ -2,6 +2,7 @@ import React from "react";
 import { Race } from "./race";
 import { Clock } from "./clock";
 import { Input } from "./input";
+import { getUser } from "../utils/getUserData";
 
 export class Main extends React.Component {
   state = {
@@ -16,47 +17,53 @@ export class Main extends React.Component {
   };
   //>>>>>>>>>>>>>>functions for Clock
 
-  timer = () => {
-    this.setState(prevState => {
-      return { time: prevState.time + 1 };
-    });
-  };
-
   toggle = () => {
+    const timer = () => {
+      this.setState(prevState => {
+        return { time: prevState.time + 1 };
+      });
+    };
     this.setState(prevState => {
       if (prevState.counting) {
-        clearInterval(this.time);
-        this.setState({ time: 0, counting: false });
+        this.setState({ time: 0, counting: false, position: [0, 0] });
+        return clearInterval(timer);
       } else {
         this.setState({ counting: true });
-        return setInterval(this.timer, 500);
+        return setInterval(timer, 500);
       }
     });
   };
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
-    //enter key Player 1
-    // console.log(this.state.counting);
+    //1 key Player 1
     if (this.state.counting) {
-      // console.log(event.charCode);
+
+      if (this.state.position[0] > 750 || this.state.position[1] > 750) {
+        return;
+      }
+
       if (event.charCode === 49) {
         this.setState(prevState => {
           return {
-            position: [prevState.position[0] + 1, prevState.position[1]]
+            position: [prevState.position[0] + 5, prevState.position[1]]
           };
         });
-        // console.log(this.state.position);
       }
-      //spacekey Player 2
+
+      //0 key Player 2
+
       else if (event.charCode === 48) {
         this.setState(prevState => {
           return {
-            position: [prevState.position[0], prevState.position[1] + 1]
+            position: [prevState.position[0], prevState.position[1] + 5]
           };
         });
-        console.log(this.state.position);
       }
     }
+    console.log(this.state.position);
+    // setTimeout(function() {
+    //   console.log("timeout");
+    // }, 1000);
   };
 
   render() {
