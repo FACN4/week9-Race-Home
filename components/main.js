@@ -15,47 +15,46 @@ export class Main extends React.Component {
   };
   //>>>>>>>>>>>>>>functions for Clock
 
-  timer = () => {
-    this.setState(prevState => {
-      return { time: prevState.time + 1 };
-    });
-  };
-
   toggle = () => {
+    const timer = () => {
+      this.setState(prevState => {
+        return { time: prevState.time + 1 };
+      });
+    };
     this.setState(prevState => {
       if (prevState.counting) {
-        clearInterval(this.time);
         this.setState({ time: 0, counting: false });
+        return clearInterval(timer);
       } else {
         this.setState({ counting: true });
-        return setInterval(this.timer, 500);
+        return setInterval(timer, 500);
       }
     });
   };
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
     //enter key Player 1
-    console.log(this.state.counting);
+    console.log(event.charCode);
     if (this.state.counting) {
-      // console.log(event.charCode);
-      if (event.charCode === 13) {
+      if (event.charCode === 49) {
         this.setState(prevState => {
           return {
             position: [prevState.position[0] + 1, prevState.position[1]]
           };
         });
-        console.log(this.state.position);
       }
       //spacekey Player 2
-      else if (event.charCode === 32) {
+      else if (event.charCode === 48) {
         this.setState(prevState => {
           return {
             position: [prevState.position[0], prevState.position[1] + 1]
           };
         });
-        console.log(this.state.position);
       }
     }
+    // setTimeout(function() {
+    //   console.log("timeout");
+    // }, 1000);
   };
 
   render() {
