@@ -2,25 +2,27 @@ import React from "react";
 
 export class Race extends React.Component {
   state = {
-    positionVert: 0
+    positionVert: Math.floor(Math.random() + 20)
   };
   bounce = () => {
-    const moveOne = () => {
-      this.setState(prevState => {
-        if (this.state.positionVert > 100) {
-          return prevState.positionVert - 1;
-        } else if (this.state.positionVert < -100) {
-          return prevState.positionVert + 1;
+    this.setState(prevState => {
+      var counter = prevState.positionVert;
+      var inc = +4;
+      setInterval(() => {
+        if (counter == 20) {
+          inc = -4;
+        } else if (counter == -20) {
+          inc = +4;
         }
-      });
-      console.log(this.state.positionVert);
-    };
-    // setInterval(moveOne, 1000);
+        counter += inc;
+        // console.log(counter);
+        this.state.positionVert = counter;
+      }, 40);
+    });
   };
   render() {
     const { photoUrl } = this.props;
     const { position } = this.props;
-    console.log(position);
     return (
       <div
         id="race"
@@ -29,7 +31,11 @@ export class Race extends React.Component {
           position: "absolute"
         }}
       >
-        <img id="avatar" src={photoUrl} style={{ left: `${position}px` }} />
+        <img
+          id="avatar"
+          src={photoUrl}
+          style={{ left: `${position}px`, top: `${this.state.positionVert}px` }}
+        />
       </div>
     );
   }

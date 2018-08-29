@@ -2,7 +2,7 @@ import React from "react";
 import { Race } from "./race";
 import { Clock } from "./clock";
 import { Input } from "./input";
-import { getUser} from "../utils/getUserData"
+import { getUser } from "../utils/getUserData";
 
 export class Main extends React.Component {
   state = {
@@ -24,7 +24,7 @@ export class Main extends React.Component {
     };
     this.setState(prevState => {
       if (prevState.counting) {
-        this.setState({ time: 0, counting: false });
+        this.setState({ time: 0, counting: false, position: [0, 0] });
         return clearInterval(timer);
       } else {
         this.setState({ counting: true });
@@ -34,26 +34,28 @@ export class Main extends React.Component {
   };
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
-    //enter key Player 1
-
+    //1 key Player 1
     if (this.state.counting) {
+      if (this.state.position[0] > 750 || this.state.position[1] > 750) {
+        return;
+      }
       if (event.charCode === 49) {
         this.setState(prevState => {
           return {
-            position: [prevState.position[0] + 1, prevState.position[1]]
+            position: [prevState.position[0] + 5, prevState.position[1]]
           };
         });
-
       }
-      //spacekey Player 2
+      //0 key Player 2
       else if (event.charCode === 48) {
         this.setState(prevState => {
           return {
-            position: [prevState.position[0], prevState.position[1] + 1]
+            position: [prevState.position[0], prevState.position[1] + 5]
           };
         });
       }
     }
+    console.log(this.state.position);
     // setTimeout(function() {
     //   console.log("timeout");
     // }, 1000);
