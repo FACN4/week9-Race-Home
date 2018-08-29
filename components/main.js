@@ -4,12 +4,20 @@ import { Clock } from "./clock";
 import { Input } from "./input";
 
 export class Main extends React.Component {
+  // state = {
+  //   time: 0,
+  //   photoUrl: [],
+  //   position: []
+  // };
+  // moveAvatar () => {
+  //
+  // }
   render() {
     return (
       <div id="main">
         <Clock />
         <Input />
-        <Race />
+        <Race /* imgUrl={someUrl} */ />
         <Race />
         <Input />
       </div>
