@@ -23,6 +23,7 @@ body {
 
 #race {
   background-color: red;
+  height: 400px;
 }
 
 #avatar {
@@ -32,10 +33,10 @@ body {
   position: relative;
 }
 
-.player-1 {
-  background-color: black;
+#race1 {
+  position: relative;
 }
 
-.player-2 {
-  background-color: orange;
+#race2 {
+  /* position: relative; */
 }

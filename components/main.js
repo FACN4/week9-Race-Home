@@ -11,7 +11,8 @@ export class Main extends React.Component {
       "https://avatars1.githubusercontent.com/u/24710103?s=400&u=7f0d9ddf007bb1072ea08f96f841a2b97e4b4fca&v=4",
       "https://avatars3.githubusercontent.com/u/39088518?v=4"
     ],
-    position: [0, 0]
+    position: [0, 0],
+    homeImg: "../images/homeIcon"
   };
   //>>>>>>>>>>>>>>functions for Clock
 
@@ -38,7 +39,7 @@ export class Main extends React.Component {
     // console.log(this.state.counting);
     if (this.state.counting) {
       // console.log(event.charCode);
-      if (event.charCode === 13) {
+      if (event.charCode === 49) {
         this.setState(prevState => {
           return {
             position: [prevState.position[0] + 1, prevState.position[1]]
@@ -47,7 +48,7 @@ export class Main extends React.Component {
         // console.log(this.state.position);
       }
       //spacekey Player 2
-      else if (event.charCode === 32) {
+      else if (event.charCode === 48) {
         this.setState(prevState => {
           return {
             position: [prevState.position[0], prevState.position[1] + 1]
@@ -71,11 +72,13 @@ export class Main extends React.Component {
           className="player-1"
           photoUrl={this.state.photoUrl[0]}
           position={this.state.position[0]}
+          raceId="race1"
         />
         <Race
           className="player-2"
           photoUrl={this.state.photoUrl[1]}
           position={this.state.position[1]}
+          raceId="race2"
         />
         <Input position={this.state.position[1]} />
       </div>
