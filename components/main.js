@@ -35,7 +35,7 @@ export class Main extends React.Component {
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
     //enter key Player 1
-    console.log(this.state.counting);
+    // console.log(this.state.counting);
     if (this.state.counting) {
       // console.log(event.charCode);
       if (event.charCode === 13) {
@@ -44,7 +44,7 @@ export class Main extends React.Component {
             position: [prevState.position[0] + 1, prevState.position[1]]
           };
         });
-        console.log(this.state.position);
+        // console.log(this.state.position);
       }
       //spacekey Player 2
       else if (event.charCode === 32) {
@@ -68,10 +68,12 @@ export class Main extends React.Component {
         />
         <Input position={this.state.position[0]} />
         <Race
+          className="player-1"
           photoUrl={this.state.photoUrl[0]}
           position={this.state.position[0]}
         />
         <Race
+          className="player-2"
           photoUrl={this.state.photoUrl[1]}
           position={this.state.position[1]}
         />

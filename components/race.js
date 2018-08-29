@@ -2,14 +2,17 @@ import React from "react";
 
 export class Race extends React.Component {
   render() {
-    const { photoUrl, position } = this.props;
+    const { photoUrl } = this.props;
+    const { position } = this.props;
+    console.log(position);
     return (
-      <div id="race">
-        <img
-          id="avatar"
-          src={photoUrl}
-          // style="position: absolute; left: 15px; top: 100px;"
-        />
+      <div
+        id="race"
+        style={{
+          position: "absolute"
+        }}
+      >
+        <img id="avatar" src={photoUrl} style={{ left: `${position}px` }} />
       </div>
     );
   }
