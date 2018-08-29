@@ -18,14 +18,17 @@ export class Race extends React.Component {
     // setInterval(moveOne, 1000);
   };
   render() {
-    const { photoUrl, position } = this.props;
+    const { photoUrl } = this.props;
+    const { position } = this.props;
+    console.log(position);
     return (
-      <div id="race" onLoad={this.bounce}>
-        <img
-          id="avatar"
-          src={photoUrl}
-          // style="position: absolute; left: 15px; top: 100px;"
-        />
+      <div
+        id="race"  onLoad={this.bounce}>
+        style={{
+          position: "absolute"
+        }}
+      >
+        <img id="avatar" src={photoUrl} style={{ left: `${position}px` }} />
       </div>
     );
   }

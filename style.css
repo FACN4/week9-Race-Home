@@ -20,3 +20,22 @@ body {
 #footer {
   background-color: white;
 }
+
+#race {
+  background-color: red;
+}
+
+#avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.player-1 {
+  background-color: black;
+}
+
+.player-2 {
+  background-color: orange;
+}
