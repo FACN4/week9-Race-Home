@@ -2,6 +2,8 @@ import React from "react";
 import { Race } from "./race";
 import { Clock } from "./clock";
 import { Input } from "./input";
+import {checkResponse , getUser , photoUrls} from "../utils/getUserData";
+
 
 export class Main extends React.Component {
   state = {
@@ -66,6 +68,7 @@ export class Main extends React.Component {
           toggle={this.toggle}
           counting={this.state.counting}
         />
+
         <Input position={this.state.position[0]} />
         <Race
           photoUrl={this.state.photoUrl[0]}
@@ -76,6 +79,7 @@ export class Main extends React.Component {
           position={this.state.position[1]}
         />
         <Input position={this.state.position[1]} />
+
       </div>
     );
   }
