@@ -32,18 +32,50 @@ export class Main extends React.Component {
       }
     });
   };
+  //>>>>>>>>>>>>>>functions for race
+  racePosition = event => {
+    //enter key Player 1
+    console.log(this.state.counting);
+    if (this.state.counting) {
+      // console.log(event.charCode);
+      if (event.charCode === 13) {
+        this.setState(prevState => {
+          return {
+            position: [prevState.position[0] + 1, prevState.position[1]]
+          };
+        });
+        console.log(this.state.position);
+      }
+      //spacekey Player 2
+      else if (event.charCode === 32) {
+        this.setState(prevState => {
+          return {
+            position: [prevState.position[0], prevState.position[1] + 1]
+          };
+        });
+        console.log(this.state.position);
+      }
+    }
+  };
+
   render() {
     return (
-      <div id="main">
+      <div id="main" onKeyPress={this.racePosition}>
         <Clock
           time={this.state.time}
           toggle={this.toggle}
           counting={this.state.counting}
         />
-        <Input />
-        <Race photoUrl={this.state.photoUrl[0]} />
-        <Race photoUrl={this.state.photoUrl[1]} />
-        <Input />
+        <Input position={this.state.position[0]} />
+        <Race
+          photoUrl={this.state.photoUrl[0]}
+          position={this.state.position[0]}
+        />
+        <Race
+          photoUrl={this.state.photoUrl[1]}
+          position={this.state.position[1]}
+        />
+        <Input position={this.state.position[1]} />
       </div>
     );
   }
