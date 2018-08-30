@@ -2,7 +2,7 @@ import React from "react";
 import { Race } from "./race";
 import { Clock } from "./clock";
 import { Input } from "./input";
-import { getUser } from "../utils/getUserData";
+
 
 export class Main extends React.Component {
   state = {
@@ -16,35 +16,33 @@ export class Main extends React.Component {
   };
   //>>>>>>>>>>>>>>functions for Clock
 
-  // timer = () => {};
-  //
-  // toggle = () => {
-  //   this.timer;
-  // };
-
+  timer = () => {
+    this.setState(prevState => {
+      return { time: prevState.time + 1 };
+    });
+  };
   toggle = () => {
-    const timer = () => {
-      this.setState(prevState => {
-        return { time: prevState.time + 1 };
-      });
-    };
     this.setState(prevState => {
       if (prevState.counting) {
         this.setState({ time: 0, counting: false, position: [0, 0] });
-        return clearInterval(timer);
+        return clearInterval(this.timer);
       } else {
         this.setState({ counting: true });
-        return setInterval(timer, 500);
+        return setInterval(this.timer, 500);
       }
     });
   };
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
     //1 key Player 1
+    if (this.state.position[0] > 750 || this.state.position[1] > 750) {
+      return;
+    }
     if (this.state.counting) {
       if (this.state.position[0] > 750 || this.state.position[1] > 750) {
         return;
       }
+
 
       if (event.charCode === 49) {
         this.setState(prevState => {

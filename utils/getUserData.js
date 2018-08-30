@@ -1,6 +1,7 @@
 //UserName & Avatar_Url//
 import React from "react";
 import ReactDOM from "react-dom";
+
 const URL = "https://api.github.com";
 const getUser = username => {
   const URL = `${BASE_URL}/users/${username}`;
