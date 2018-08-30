@@ -35,11 +35,10 @@ export class Main extends React.Component {
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
     //1 key Player 1
+    if (this.state.position[0] > 750 || this.state.position[1] > 750) {
+      return;
+    }
     if (this.state.counting) {
-      if (this.state.position[0] > 750 || this.state.position[1] > 750) {
-        return;
-      }
-
       if (event.charCode === 49) {
         this.setState(prevState => {
           return {
