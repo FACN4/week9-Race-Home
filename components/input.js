@@ -1,5 +1,5 @@
 import React from "react";
-import {username , photo_url} from "./data.json";
+import {username , photo_url} from "../utils/data.json";
 
 export class Input extends React.Component {
   render() {
