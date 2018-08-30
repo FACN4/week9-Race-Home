@@ -6,8 +6,8 @@ export class Race extends React.Component {
   };
   bounce = () => {
     this.setState(prevState => {
-      var counter = prevState.positionVert;
-      var inc = +4;
+      let counter = prevState.positionVert;
+      let inc = +4;
       setInterval(() => {
         if (counter == 20) {
           inc = -4;
@@ -15,31 +15,25 @@ export class Race extends React.Component {
           inc = +4;
         }
         counter += inc;
-        // console.log(counter);
+        // console.log(counter)1;
         this.state.positionVert = counter;
       }, 40);
     });
   };
   render() {
-    const { homeImg } = this.props;
-    const { photoUrl } = this.props;
-    const { position } = this.props;
-
+    const { photoUrl, position } = this.props;
     return (
       <div
         id="race"
         onLoad={this.bounce}
-
         style={{
-          position: "relative"
+          position: "absolute"
         }}
       >
-
         <img
           id="avatar"
           src={photoUrl}
           style={{ left: `${position}px`, top: `${this.state.positionVert}px` }}
-
         />
       </div>
     );

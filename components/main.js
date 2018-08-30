@@ -16,32 +16,29 @@ export class Main extends React.Component {
     homeImg: "../images/homeIcon"
   };
   //>>>>>>>>>>>>>>functions for Clock
-
+  timer = () => {
+    this.setState(prevState => {
+      return { time: prevState.time + 1 };
+    });
+  };
   toggle = () => {
-    const timer = () => {
-      this.setState(prevState => {
-        return { time: prevState.time + 1 };
-      });
-    };
     this.setState(prevState => {
       if (prevState.counting) {
         this.setState({ time: 0, counting: false, position: [0, 0] });
-        return clearInterval(timer);
+        return clearInterval(this.timer);
       } else {
         this.setState({ counting: true });
-        return setInterval(timer, 500);
+        return setInterval(this.timer, 500);
       }
     });
   };
   //>>>>>>>>>>>>>>functions for race
   racePosition = event => {
     //1 key Player 1
+    if (this.state.position[0] > 750 || this.state.position[1] > 750) {
+      return;
+    }
     if (this.state.counting) {
-
-      if (this.state.position[0] > 750 || this.state.position[1] > 750) {
-        return;
-      }
-
       if (event.charCode === 49) {
         this.setState(prevState => {
           return {
@@ -51,7 +48,6 @@ export class Main extends React.Component {
       }
 
       //0 key Player 2
-
       else if (event.charCode === 48) {
         this.setState(prevState => {
           return {
