@@ -10,7 +10,7 @@ export class Main extends React.Component {
     counting: false,
     photoUrl: [
       "https://avatars1.githubusercontent.com/u/24710103?s=400&u=7f0d9ddf007bb1072ea08f96f841a2b97e4b4fca&v=4",
-      "https://avatars3.githubusercontent.com/u/39088518?v=4"
+      "https://avatars3githubusercontent.com/u/39088518?v=4"
     ],
     position: [0, 0]
   };

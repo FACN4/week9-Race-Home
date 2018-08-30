@@ -1,4 +1,5 @@
 import React from "react";
+import homeImg from "../images/homeIcon.png";
 
 export class Race extends React.Component {
   state = {
@@ -22,7 +23,6 @@ export class Race extends React.Component {
   };
   render() {
     const { photoUrl, position } = this.props;
-
     return (
       <div
         id="race"
@@ -36,6 +36,7 @@ export class Race extends React.Component {
           src={photoUrl}
           style={{ left: `${position}px`, top: `${this.state.positionVert}px` }}
         />
+        <img src={homeImg} />
       </div>
     );
   }
