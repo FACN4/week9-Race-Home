@@ -6,7 +6,7 @@ export class Input extends React.Component {
     return (
       <div id="input">
         <form>
-        <input id="inputBox" type="text" list="suggestion" placeholder="">
+        <input id="inputBox" type="text" list="suggestion" placeholder=""/>
     <button id ="btn" type="button">Search</button>
     <datalist id= "suggestion">
   </datalist>
