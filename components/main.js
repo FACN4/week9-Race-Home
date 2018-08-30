@@ -10,12 +10,12 @@ export class Main extends React.Component {
     counting: false,
     photoUrl: [
       "https://avatars1.githubusercontent.com/u/24710103?s=400&u=7f0d9ddf007bb1072ea08f96f841a2b97e4b4fca&v=4",
-      "https://avatars3.githubusercontent.com/u/39088518?v=4"
+      "https://avatars3githubusercontent.com/u/39088518?v=4"
     ],
-    position: [0, 0],
-    homeImg: "../images/homeIcon"
+    position: [0, 0]
   };
   //>>>>>>>>>>>>>>functions for Clock
+
   timer = () => {
     this.setState(prevState => {
       return { time: prevState.time + 1 };
@@ -39,6 +39,11 @@ export class Main extends React.Component {
       return;
     }
     if (this.state.counting) {
+      if (this.state.position[0] > 750 || this.state.position[1] > 750) {
+        return;
+      }
+
+
       if (event.charCode === 49) {
         this.setState(prevState => {
           return {
