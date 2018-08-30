@@ -3,7 +3,6 @@ import { Race } from "./race";
 import { Clock } from "./clock";
 import { Input } from "./input";
 
-
 export class Main extends React.Component {
   state = {
     time: 0,
@@ -12,7 +11,7 @@ export class Main extends React.Component {
       "https://avatars1.githubusercontent.com/u/24710103?s=400&u=7f0d9ddf007bb1072ea08f96f841a2b97e4b4fca&v=4",
       "https://avatars3.githubusercontent.com/u/39088518?v=4"
     ],
-    position: [0, 0],
+    position: [50, 50],
     homeImg: "../images/homeIcon"
   };
   //>>>>>>>>>>>>>>functions for Clock

@@ -1,28 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Poiret+One|Arapey|Caveat");
 
 body {
-  background-color: green;
+  background-image: url('http://www.orangesmile.com/common/img_city_maps/nazareth-map-0.jpg');
 }
 
 #root {
   margin: auto;
-  width: 75%;
+  background-color: rgb(178, 169, 240, 0.9);
+  width: 900px;
+  height: 900px;
 }
 
 #header {
-  background-color: silver;
+  /* background-color: silver; */
 }
 
 #main {
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 #footer {
-  background-color: white;
+  /* background-color: white; */
 }
 
 #race {
-  background-color: red;
+  /* background-color: red; */
   height: 400px;
 }
 
