@@ -2,7 +2,7 @@ import React from "react";
 import { Race } from "./race";
 import { Clock } from "./clock";
 import { Input } from "./input";
-import { getUser } from "../utils/getUserData";
+
 
 export class Main extends React.Component {
   state = {
