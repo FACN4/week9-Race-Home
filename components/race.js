@@ -21,25 +21,20 @@ export class Race extends React.Component {
     });
   };
   render() {
-    const { homeImg } = this.props;
-    const { photoUrl } = this.props;
-    const { position } = this.props;
+    const { photoUrl, position } = this.props;
 
     return (
       <div
         id="race"
         onLoad={this.bounce}
-
         style={{
           position: "relative"
         }}
       >
-
         <img
           id="avatar"
           src={photoUrl}
           style={{ left: `${position}px`, top: `${this.state.positionVert}px` }}
-
         />
       </div>
     );

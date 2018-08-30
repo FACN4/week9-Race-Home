@@ -12,10 +12,15 @@ export class Main extends React.Component {
       "https://avatars1.githubusercontent.com/u/24710103?s=400&u=7f0d9ddf007bb1072ea08f96f841a2b97e4b4fca&v=4",
       "https://avatars3.githubusercontent.com/u/39088518?v=4"
     ],
-    position: [0, 0],
-    homeImg: "../images/homeIcon"
+    position: [0, 0]
   };
   //>>>>>>>>>>>>>>functions for Clock
+
+  // timer = () => {};
+  //
+  // toggle = () => {
+  //   this.timer;
+  // };
 
   toggle = () => {
     const timer = () => {
@@ -37,7 +42,6 @@ export class Main extends React.Component {
   racePosition = event => {
     //1 key Player 1
     if (this.state.counting) {
-
       if (this.state.position[0] > 750 || this.state.position[1] > 750) {
         return;
       }
@@ -51,7 +55,6 @@ export class Main extends React.Component {
       }
 
       //0 key Player 2
-
       else if (event.charCode === 48) {
         this.setState(prevState => {
           return {
